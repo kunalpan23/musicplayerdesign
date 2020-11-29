@@ -1,0 +1,215 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+}
+
+button,
+a,
+ul,
+li {
+	outline: none;
+	text-decoration: none;
+	list-style: none;
+	border: none;
+}
+
+@import './flex.scss';
+@import './mixin.scss';
+
+$primary: #26282b;
+$text: #a7a9aa;
+$textLight: #7a7c7e;
+$favorite: #d4450e;
+
+html,
+body,
+#root {
+	height: 100%;
+	width: 100%;
+	background: $primary;
+	color: $text;
+	font-size: 14px;
+	line-height: 1.47;
+	font-weight: normal;
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+#root {
+	.hidden {
+		display: none;
+	}
+
+	.player {
+		overflow: hidden;
+		height: 100vh;
+		border: 1px solid $textLight;
+		box-sizing: border-box;
+		max-width: 375px;
+		border-radius: 30px;
+		position: relative;
+
+		// List View
+		&__list {
+			@include primaryBackground();
+			position: relative;
+			height: 100%;
+
+			& .credits {
+				text-align: center;
+				margin-bottom: 60px;
+				& a {
+					color: $text;
+				}
+			}
+
+			&--header {
+				padding: 0 15px;
+
+				> button {
+					padding: 5px;
+					@include circularBorderDesign();
+
+					.circular__inner {
+						@include circularDesign($textLight);
+						height: 40px;
+						width: 40px;
+					}
+
+					&.favorite {
+						i {
+							color: $favorite;
+						}
+					}
+				}
+
+				.currentSongImage__inner {
+					padding: 6px;
+					@include circularBorderDesign(150px, 150px);
+
+					.circular__inner {
+						height: 100%;
+						width: 100%;
+						overflow: hidden;
+						@include circularDesign();
+					}
+
+					& img {
+						height: 100%;
+						width: 100%;
+					}
+				}
+			}
+
+			&--list {
+				overflow: auto;
+				margin-top: 45px;
+				::-webkit-scrollbar-track {
+					width: 0;
+				}
+
+				ul {
+					padding: 5px 0;
+				}
+				@import './listContainer.scss';
+			}
+		}
+
+		// Now Player View
+		&__wrap {
+			// Floating wrap
+			position: absolute;
+			display: block;
+			z-index: 1;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			transform: translateX(-100%);
+			@include primaryBackground();
+			padding: 30px;
+			transition: ease all 400ms;
+
+			&.active {
+				transform: translateX(0);
+			}
+
+			&--top {
+				&-heading {
+					font-size: 12px;
+				}
+			}
+
+			.currentSongImageContainer {
+				margin: 50px 0;
+			}
+
+			.currentSongImage__inner {
+				@include circularBorderDesign(250px, 250px);
+				padding: 8px;
+
+				.circular__inner {
+					overflow: hidden;
+					height: 100%;
+					width: 100%;
+					@include circularDesign();
+
+					> img {
+						height: 100%;
+						width: 100%;
+					}
+				}
+			}
+
+			& button {
+				padding: 5px;
+				@include circularBorderDesign();
+
+				.circular__inner {
+					@include circularDesign($textLight);
+					height: 40px;
+					width: 40px;
+				}
+			}
+
+			&--detail {
+				text-align: center;
+
+				&-title {
+					font-size: 14px;
+					height: 24px;
+					margin-bottom: 10px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+				&-artist {
+					font-size: 13px;
+				}
+			}
+		}
+
+		// Loading View
+		&__loading {
+			display: none;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 9;
+			&.active {
+				display: block;
+			}
+
+			&--inner {
+				@include radialLoadingBackground();
+				height: 100%;
+				width: 100%;
+				font-size: 20px;
+				opacity: 0.9;
+			}
+		}
+	}
+}

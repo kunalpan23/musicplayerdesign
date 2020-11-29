@@ -1,0 +1,143 @@
+@mixin primaryBackground() {
+	background: rgb(53, 58, 63);
+	background: -moz-linear-gradient(
+		top,
+		rgba(53, 58, 63, 1) 0%,
+		rgba(24, 26, 29, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		top,
+		rgba(53, 58, 63, 1) 0%,
+		rgba(24, 26, 29, 1) 100%
+	);
+	background: linear-gradient(
+		to bottom,
+		rgba(53, 58, 63, 1) 0%,
+		rgba(24, 26, 29, 1) 100%
+	);
+	border-radius: 30px;
+	padding: 30px 15px;
+}
+
+@mixin radialLoadingBackground() {
+	background: rgb(125, 126, 125);
+	background: -moz-radial-gradient(
+		center,
+		ellipse cover,
+		rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%
+	);
+	background: -webkit-radial-gradient(
+		center,
+		ellipse cover,
+		rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%
+	);
+	background: radial-gradient(
+		ellipse at center,
+		rgba(125, 126, 125, 1) 0%,
+		rgba(14, 14, 14, 1) 100%
+	);
+}
+
+@mixin circularDesign($color: initial) {
+	border-radius: 50%;
+	background: rgb(47, 51, 57);
+	background: -moz-linear-gradient(
+		-45deg,
+		rgba(47, 51, 57, 1) 0%,
+		rgba(28, 32, 35, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		-45deg,
+		rgba(47, 51, 57, 1) 0%,
+		rgba(28, 32, 35, 1) 100%
+	);
+	background: linear-gradient(
+		135deg,
+		rgba(47, 51, 57, 1) 0%,
+		rgba(28, 32, 35, 1) 100%
+	);
+	color: $color;
+}
+
+@mixin circularBorderDesign($height: auto, $width: auto) {
+	border-radius: 50%;
+	box-shadow: -6px -6px 30px -10px #7a7c7e, 6px 6px 30px -10px #000;
+	background: rgb(48, 54, 60);
+	background: -moz-linear-gradient(
+		-45deg,
+		rgba(48, 54, 60, 1) 0%,
+		rgba(48, 54, 60, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		-45deg,
+		rgba(48, 54, 60, 1) 0%,
+		rgba(48, 54, 60, 1) 100%
+	);
+	background: linear-gradient(
+		135deg,
+		rgba(48, 54, 60, 1) 0%,
+		rgba(48, 54, 60, 1) 100%
+	);
+	height: $height;
+	width: $width;
+}
+
+@mixin listItemActiveBackground() {
+	background: rgb(18, 20, 22);
+	box-shadow: 0 -1px 0 0 $textLight, 0 1px 0 0 #000;
+	background: -moz-linear-gradient(
+		top,
+		rgba(18, 20, 22, 1) 0%,
+		rgba(26, 28, 31, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		top,
+		rgba(18, 20, 22, 1) 0%,
+		rgba(26, 28, 31, 1) 100%
+	);
+	background: linear-gradient(
+		to bottom,
+		rgba(18, 20, 22, 1) 0%,
+		rgba(26, 28, 31, 1) 100%
+	);
+}
+
+@mixin buttonActiveDesign() {
+	background: rgb(183, 31, 14);
+	background: -moz-linear-gradient(
+		-45deg,
+		rgba(183, 31, 14, 1) 0%,
+		rgba(220, 77, 11, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		-45deg,
+		rgba(183, 31, 14, 1) 0%,
+		rgba(220, 77, 11, 1) 100%
+	);
+	background: linear-gradient(
+		135deg,
+		rgba(183, 31, 14, 1) 0%,
+		rgba(220, 77, 11, 1) 100%
+	);
+}
+
+@mixin buttonActiveBorderDesign() {
+	background: rgb(225, 79, 12);
+	background: -moz-linear-gradient(
+		-45deg,
+		rgba(225, 79, 12, 1) 0%,
+		rgba(185, 52, 20, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		-45deg,
+		rgba(225, 79, 12, 1) 0%,
+		rgba(185, 52, 20, 1) 100%
+	);
+	background: linear-gradient(
+		135deg,
+		rgba(225, 79, 12, 1) 0%,
+		rgba(185, 52, 20, 1) 100%
+	);
+}

@@ -1,0 +1,78 @@
+.listItems {
+	&__item {
+		padding: 15px;
+		box-sizing: border-box;
+		border-radius: 20px;
+		position: relative;
+
+		& .fakeClick {
+			position: absolute;
+			display: block;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		&--details {
+			&-heading {
+				font-size: 20px;
+				padding-right: 11px;
+				width: 90%;
+				overflow: hidden;
+			}
+		}
+
+		> button {
+			padding: 5px;
+			@include circularBorderDesign();
+
+			.circular__inner {
+				@include circularDesign($textLight);
+				height: 35px;
+				width: 35px;
+
+				i.pause {
+					display: none;
+				}
+			}
+		}
+
+		&.active {
+			@include listItemActiveBackground();
+
+			& .fakeClick {
+				display: none;
+			}
+
+			> button {
+				@include buttonActiveBorderDesign();
+
+				.circular__inner {
+					@include buttonActiveDesign();
+					color: #fff;
+				}
+
+				&.play {
+					i.pause {
+						display: none;
+					}
+
+					i.play {
+						display: block;
+					}
+				}
+
+				&.pause {
+					i.pause {
+						display: block;
+					}
+
+					i.play {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

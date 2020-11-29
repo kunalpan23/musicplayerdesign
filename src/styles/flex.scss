@@ -1,0 +1,43 @@
+.fx {
+	display: flex;
+}
+
+.fx-ac {
+	align-items: center;
+}
+
+.fx-jc {
+	justify-content: center;
+}
+
+.fx-ae {
+	align-items: flex-end;
+}
+
+.fx-je {
+	justify-content: flex-end;
+}
+
+.fx-as {
+	align-items: flex-start;
+}
+
+.fx-js {
+	justify-content: flex-start;
+}
+
+.fx-dc {
+	flex-direction: column;
+}
+
+.fx-dr {
+	flex-direction: row;
+}
+
+.fx-jsb {
+	justify-content: space-between;
+}
+
+.fx-1 {
+	flex: 1;
+}
